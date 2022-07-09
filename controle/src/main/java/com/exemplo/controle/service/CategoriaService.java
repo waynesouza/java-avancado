@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -15,8 +16,16 @@ public class CategoriaService {
     private final CategoriaRepository repository;
     private final CategoriaMapper mapper;
 
+    public CategoriaDTO salvar(CategoriaDTO categoriaDTO) {
+        return mapper.toDto(repository.save(mapper.toEntity(categoriaDTO)));
+    }
+
     public List<CategoriaDTO> listarTodos() {
         return mapper.toDto(repository.findAll());
+    }
+
+    public void apagar(Long codigo) {
+        repository.deleteById(codigo);
     }
 
 }
