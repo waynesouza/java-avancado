@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { LoginModule } from "./login/module/login.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {CategoriaModule} from "./categoria/module/categoria.module";
+import { DespesaComponent } from './despesa/components/despesa.component';
+import { UsuarioComponent } from './usuario/components/usuario.component';
+import { UsuarioModule } from "./usuario/module/usuario.module";
 
 @NgModule({
   declarations: [
@@ -15,7 +18,8 @@ import {CategoriaModule} from "./categoria/module/categoria.module";
     BrowserAnimationsModule,
     CategoriaModule,
     AppRoutingModule,
-    LoginModule
+    LoginModule,
+    UsuarioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
